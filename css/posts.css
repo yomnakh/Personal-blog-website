@@ -45,10 +45,6 @@ header a.subscribe, header i.fas {
     padding: 20px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-aside section ul{
-    text-decoration: underline;
-    color: #007bff;
-}
 
 .sidebar h2 {
     color: #333;
@@ -150,14 +146,29 @@ button a {
 }
 @media (max-width: 768px) {
     .container {
-        padding: 10px;
-    }
-
-    header, .sidebar, main, footer {
-        text-align: center;
+        grid-template-areas:
+            "header"
+            "main"
+            "sidebar"
+            "footer";
+        grid-template-columns: 1fr;
+        gap: 10px;
     }
 
     header {
         flex-direction: column;
+    }
+
+    .sidebar {
+        padding: 10px;
+        text-align: center;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    footer {
+        padding: 10px;
     }
 }
